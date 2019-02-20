@@ -4,7 +4,7 @@ We're creating an application that allows party planners to plan prim and proper
 
 ## Base Requirements
 
-This application is fully functional! But `App.js` is getting really crowded. Add components to clean up `App.js`
+This application is fully functional! But `App.js` is getting really crowded. It could use a proper clean up! Add components to clean up `App.js`
 
 Create the new components in the following order (increasing level of difficulty):
 
