@@ -9,8 +9,71 @@ This application is fully functional! But `App.js` is getting really crowded. Ad
 Create the new components in the following order (increasing level of difficulty):
 
 1. Header
-2. Footer
-3. Dinner Supplies
-4. Party Leader
-5. Guest List
-6. Guest Form
+1. Footer
+1. Guest List
+1. Dinner Supplies
+1. Guest Form
+
+The application should still work the same way. Here is what `App.js` `render` method should look like when the refactor is complete:
+
+```JSX
+render() {
+  return (
+    <div className="App">
+      <Header />
+      <h2>Party Leader</h2>
+      {this.state.guestList[0] && <h3>{this.state.guestList[0].name}</h3>}
+      <GuestForm
+        newGuest={this.state.newGuest}
+        handleChangeFor={this.handleChangeFor}
+        handleSubmit={this.handleSubmit}
+      />
+      <GuestList guests={this.state.guestList}/>
+      <DinnerSupplies count={this.state.guestList.length} />
+      <Footer />
+    </div>
+  );
+}
+
+```
+
+## Stretch Goals
+
+### Leader
+
+Create a `SilverWare` Component so that the lines in `App.js`:
+
+```JSX
+<h2>Party Leader</h2>
+{this.state.guestList[0] && <h3>{this.state.guestList[0].name}</h3>}
+```
+
+Can be replaced by:
+
+```JSX
+<PartyLeader leader={this.state.guestList[0]}/>
+```
+
+### Silverware
+
+Create a `SilverWare` Component as a reusable Component so that the lines in `DinnerSupplies`:
+
+```JSX
+<div>
+  Spoons: {this.props.count * 2}
+</div>
+<div>
+  Forks: {this.props.count * 2}
+</div>
+<div>
+  Knives: {this.props.count * 2}
+</div>
+```
+
+Can be replaced by:
+
+```JSX
+<SilverWare name="Spoons" count={this.props.count} />
+<SilverWare name="Forks" count={this.props.count} />
+<SilverWare name="Knives" count={this.props.count} />
+```
