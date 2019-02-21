@@ -77,3 +77,11 @@ Can be replaced by:
 <SilverWare name="Forks" count={this.props.count} />
 <SilverWare name="Knives" count={this.props.count} />
 ```
+
+### Remove a guest
+
+Allow the user to remove a guest from the list by adding a `Delete` button to teach row in the table and removing them from the array.
+
+### Create a Guest Component
+
+Create a `Guest` component that is the `<tr>` of the table and pass props accordingly.
