@@ -41,7 +41,7 @@ render() {
 
 ### Leader
 
-Create a `SilverWare` Component so that the lines in `App.js`:
+Create a `PartyLeader` Component so that the lines in `App.js`:
 
 ```JSX
 <h2>Party Leader</h2>
