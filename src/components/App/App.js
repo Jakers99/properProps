@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import GuestList from '../GuestList/GuestList';
+import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
+import GuestForm from '../GuestForm/GuestForm';
 import './App.css';
 
 class App extends Component {
@@ -98,20 +103,19 @@ class App extends Component {
             ))}
           </tbody>
         </table>
-        <h2>Dinner Supplies</h2>
-        <div>
-          Spoons: {this.state.guestList.length * 2}
-        </div>
-        <div>
-          Forks: {this.state.guestList.length * 2}
-        </div>
-        <div>
-          Knives: {this.state.guestList.length * 2}
-        </div>
+
         <footer>
           <h3>Have fun!</h3>
           <p>Don't forget to mind your Ps and Qs!</p>
         </footer>
+
+        <GuestList glProp={this.state.gl} />
+        <Footer footProp={this.state.foot} />
+        <Header headProp={this.state.head} />
+        <DinnerSupplies guestList={this.state.guestList} />
+        <GuestForm guestProp={this.state.guest} />
+
+
       </div>
     );
   }
